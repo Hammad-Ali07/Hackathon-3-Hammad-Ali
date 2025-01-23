@@ -1,12 +1,15 @@
 'use client'; // Required for React hooks in Next.js
 
-import { useState } from "react";
-import Header from "@/app/components/header";
+import { useState, JSX } from "react";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 
-const page = async ({ params: { id } }: { params: { id: string } }) => {
+const page = async ({
+  params,
+}: {
+  params: { id: string };
+}): Promise<JSX.Element> => {
   const query = `*[ _type == "product" && _id == $id]{
     name,
     "id": _id,
@@ -16,7 +19,7 @@ const page = async ({ params: { id } }: { params: { id: string } }) => {
     "image": image.asset._ref
   }[0]`;
 
-  const product: Product | null = await client.fetch(query, { id });
+  const product: Product | null = await client.fetch(query, { id: params.id });
 
   if (!product) {
     return (

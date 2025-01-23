@@ -2,7 +2,6 @@ import { client } from '@/sanity/lib/client';
 import ProductListing from '../components/ProductListing';
 import Link from 'next/link';
 import Image from 'next/image';
-import Header from '../components/header';
 import Field from '../components/Feild';
 import Page from '../components/Ourpage';
 import ShopLine from '../components/shop';
@@ -34,7 +33,6 @@ const Shop = async () => {
 
   return (
   <div>
-    <Header />
      <div className="relative text-black">
           <Image
             src="/shop.jpeg" // Replace with the correct image file path

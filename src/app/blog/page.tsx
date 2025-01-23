@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaCalendar, FaUserLarge } from 'react-icons/fa6';
 import { GiWoodenChair } from 'react-icons/gi';
-import Header from '../components/header';
 import Page from '../components/Ourpage';
 import Field from '../components/Feild';
 
@@ -12,7 +11,6 @@ function Blog() {
         <div className="max-w-screen-2xl container mx-auto pb-8 px-4">
             {/* Header Section */}
             <div className="bg-[#faf4f4]">
-                <Header />
             </div>
 
             {/* Banner Section */}
